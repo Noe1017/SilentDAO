@@ -56,3 +56,16 @@ dist-ssr/
 
 # Deployment info (optional - comment out if you want to track deployments)
 deployment.json
+
+# Demo and presentation files
+*_DEMO.md
+*_DEMO_EN.md
+*_GUIDE.md
+*_SCRIPT*.md
+OPENING_SPEECH.md
+VIDEO_RECORDING*.md
+demo.html
+portfolio.html
+frontend/test.html
+frontend/public/*.html
+!frontend/public/index.html
