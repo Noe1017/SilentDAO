@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MetaMask Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #1a1a1a;
+            color: #fff;
+        }
+        button {
+            background: #00ff9d;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            opacity: 0.8;
+        }
+        #log {
+            background: #2a2a2a;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .success { color: #00ff9d; }
+        .error { color: #ff4444; }
+        .info { color: #4a9eff; }
+    </style>
+</head>
+<body>
+    <h1>🔌 MetaMask Connection Test</h1>
+    <p>Click the button below to test MetaMask connection</p>
+
+    <button id="connectBtn">Connect MetaMask</button>
+    <button id="checkBtn" style="margin-left: 10px;">Check Network</button>
+
+    <div id="log"></div>
+
+    <script>
+        function log(message, type = 'info') {
+            const logDiv = document.getElementById('log');
+            const timestamp = new Date().toLocaleTimeString();
+            const className = type;
+            logDiv.innerHTML += `<div class="${className}">[${timestamp}] ${message}</div>`;
+            logDiv.scrollTop = logDiv.scrollHeight;
+            console.log(`[${type}]`, message);
+        }
+
+        // Check if MetaMask is installed
+        if (typeof window.ethereum !== 'undefined') {
+            log('✅ MetaMask is installed!', 'success');
+        } else {
+            log('❌ MetaMask not found! Please install MetaMask.', 'error');
+        }
+
+        // Connect button
+        document.getElementById('connectBtn').addEventListener('click', async () => {
+            log('🔷 Requesting account access...', 'info');
+
+            try {
+                if (typeof window.ethereum === 'undefined') {
+                    throw new Error('MetaMask not installed');
+                }
+
+                const accounts = await window.ethereum.request({
+                    method: 'eth_requestAccounts'
+                });
+
+                if (accounts.length > 0) {
+                    log(`✅ Connected! Address: ${accounts[0]}`, 'success');
+
+                    // Get balance
+                    const balance = await window.ethereum.request({
+                        method: 'eth_getBalance',
+                        params: [accounts[0], 'latest']
+                    });
+                    const balanceInEth = parseInt(balance, 16) / 1e18;
+                    log(`💰 Balance: ${balanceInEth.toFixed(4)} MNT`, 'info');
+                }
+            } catch (error) {
+                log(`❌ Error: ${error.message}`, 'error');
+                console.error(error);
+            }
+        });
+
+        // Check network button
+        document.getElementById('checkBtn').addEventListener('click', async () => {
+            log('🔷 Checking network...', 'info');
+
+            try {
+                const chainId = await window.ethereum.request({
+                    method: 'eth_chainId'
+                });
+
+                log(`📌 Current Chain ID: ${chainId}`, 'info');
+
+                if (chainId === '0x138B') {
+                    log('✅ Already on Mantle Sepolia Testnet!', 'success');
+                } else {
+                    log(`⚠️ Not on Mantle Sepolia. Switching...`, 'info');
+
+                    await window.ethereum.request({
+                        method: 'wallet_switchEthereumChain',
+                        params: [{ chainId: '0x138B' }]
+                    });
+
+                    log('✅ Switched to Mantle Sepolia Testnet!', 'success');
+                }
+            } catch (error) {
+                if (error.code === 4902) {
+                    log('⚠️ Mantle Sepolia not added. Adding now...', 'info');
+
+                    await window.ethereum.request({
+                        method: 'wallet_addEthereumChain',
+                        params: [{
+                            chainId: '0x138B',
+                            chainName: 'Mantle Sepolia Testnet',
+                            nativeCurrency: {
+                                name: 'Mantle',
+                                symbol: 'MNT',
+                                decimals: 18
+                            },
+                            rpcUrls: ['https://rpc.sepolia.mantle.xyz'],
+                            blockExplorerUrls: ['https://sepolia.mantle.xyz']
+                        }]
+                    });
+
+                    log('✅ Mantle Sepolia Testnet added!', 'success');
+                } else {
+                    log(`❌ Error: ${error.message}`, 'error');
+                    console.error(error);
+                }
+            }
+        });
+
+        // Listen for account changes
+        if (window.ethereum) {
+            window.ethereum.on('accountsChanged', (accounts) => {
+                log(`📢 Account changed: ${accounts[0] || 'disconnected'}`, 'info');
+            });
+
+            window.ethereum.on('chainChanged', (chainId) => {
+                log(`📢 Chain changed: ${chainId}`, 'info');
+            });
+        }
+    </script>
+</body>
+</html>

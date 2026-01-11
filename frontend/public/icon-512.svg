@@ -1,0 +1,35 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="512" height="512" rx="96" fill="#00ff9d"/>
+
+  <!-- Shield -->
+  <path d="M256 64
+           L416 128
+           C416 128 416 256 416 256
+           C416 384 256 448 256 448
+           C256 448 96 384 96 256
+           C96 256 96 128 96 128
+           L256 64Z"
+        fill="#0a0a0a"/>
+
+  <!-- Eye outer -->
+  <circle cx="256" cy="240" r="64" fill="#00ff9d"/>
+
+  <!-- Eye inner (pupil) -->
+  <circle cx="256" cy="240" r="32" fill="#0a0a0a">
+    <animate attributeName="r" values="32;36;32" dur="3s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Eye highlight -->
+  <circle cx="272" cy="224" r="12" fill="#00ff9d" opacity="0.8">
+    <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Checkmark -->
+  <path d="M192 320 L240 368 L320 288"
+        stroke="#00ff9d"
+        stroke-width="24"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        fill="none"/>
+</svg>

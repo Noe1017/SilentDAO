@@ -1,0 +1,165 @@
+.proposal-list {
+  margin-top: 2rem;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.section-header h2 {
+  margin: 0;
+}
+
+.loading-state,
+.error-state,
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.loading-state p,
+.error-state p,
+.empty-state p {
+  margin: 1rem 0;
+}
+
+.proposals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.proposal-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 2rem;
+  transition: all 0.3s;
+}
+
+.proposal-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+}
+
+.proposal-header {
+  margin-bottom: 1.5rem;
+}
+
+.proposal-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.proposal-info h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.4;
+}
+
+.proposal-time {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.proposal-description {
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.proposal-votes {
+  margin-bottom: 1.5rem;
+}
+
+.vote-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.vote-section {
+  display: grid;
+  grid-template-columns: 80px 1fr 50px;
+  align-items: center;
+  gap: 1rem;
+}
+
+.vote-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.vote-count {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.bar-container {
+  position: relative;
+  height: 24px;
+  background: var(--bg-tertiary);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  transition: width 0.5s ease;
+}
+
+.bar-fill.for {
+  background: linear-gradient(90deg, var(--success) 0%, rgba(0, 255, 157, 0.5) 100%);
+}
+
+.bar-fill.against {
+  background: linear-gradient(90deg, var(--error) 0%, rgba(255, 61, 0, 0.5) 100%);
+}
+
+.bar-fill.abstain {
+  background: linear-gradient(90deg, var(--text-secondary) 0%, rgba(160, 160, 160, 0.5) 100%);
+}
+
+.vote-percentage {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  text-align: right;
+}
+
+.total-votes {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .proposals-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .vote-section {
+    grid-template-columns: 60px 1fr 40px;
+    gap: 0.5rem;
+  }
+}

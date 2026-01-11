@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SilentDAO - Icon Download</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background: #0a0a0a;
+            color: #00ff9d;
+            padding: 40px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #00ff9d;
+            padding-bottom: 20px;
+        }
+
+        .subtitle {
+            color: #888;
+            margin-bottom: 40px;
+        }
+
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .icon-card {
+            background: #111;
+            border: 1px solid #333;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .icon-preview {
+            background: #000;
+            padding: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 200px;
+        }
+
+        .icon-info {
+            margin: 15px 0;
+            padding: 15px;
+            background: #000;
+            border-left: 3px solid #00ff9d;
+            text-align: left;
+        }
+
+        .download-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #00ff9d;
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 5px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .download-btn:hover {
+            background: #00cc7d;
+        }
+
+        .instructions {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            padding: 30px;
+            margin: 40px 0;
+        }
+
+        .instructions h2 {
+            color: #00ff9d;
+            margin-bottom: 20px;
+        }
+
+        .instructions ol {
+            margin-left: 20px;
+        }
+
+        .instructions li {
+            margin: 10px 0;
+        }
+
+        code {
+            background: #000;
+            padding: 2px 8px;
+            border: 1px solid #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>SilentDAO Icon Pack</h1>
+        <p class="subtitle">All icons and logos for submission</p>
+
+        <div class="icon-grid">
+            <!-- 512x512 -->
+            <div class="icon-card">
+                <h3>512 x 512</h3>
+                <div class="icon-preview">
+                    <img src="/icon-512.svg" width="150" height="150" alt="SilentDAO Icon">
+                </div>
+                <div class="icon-info">
+                    <strong>Format:</strong> SVG<br>
+                    <strong>Use:</strong> App icon, large displays<br>
+                    <strong>Background:</strong> Green (#00ff9d)
+                </div>
+                <a href="/icon-512.svg" download="silentdao-icon-512.svg" class="download-btn">Download SVG</a>
+            </div>
+
+            <!-- 192x192 -->
+            <div class="icon-card">
+                <h3>192 x 192</h3>
+                <div class="icon-preview">
+                    <img src="/icon-192.svg" width="120" height="120" alt="SilentDAO Icon">
+                </div>
+                <div class="icon-info">
+                    <strong>Format:</strong> SVG<br>
+                    <strong>Use:</strong> PWA icon, Android<br>
+                    <strong>Background:</strong> Green (#00ff9d)
+                </div>
+                <a href="/icon-192.svg" download="silentdao-icon-192.svg" class="download-btn">Download SVG</a>
+            </div>
+
+            <!-- 32x32 -->
+            <div class="icon-card">
+                <h3>32 x 32</h3>
+                <div class="icon-preview">
+                    <img src="/favicon.svg" width="64" height="64" alt="SilentDAO Favicon">
+                </div>
+                <div class="icon-info">
+                    <strong>Format:</strong> SVG<br>
+                    <strong>Use:</strong> Favicon, tab icon<br>
+                    <strong>Background:</strong> Green (#00ff9d)
+                </div>
+                <a href="/favicon.svg" download="silentdao-favicon.svg" class="download-btn">Download SVG</a>
+            </div>
+
+            <!-- Logo -->
+            <div class="icon-card">
+                <h3>Hero Logo</h3>
+                <div class="icon-preview">
+                    <img src="/logo.svg" width="150" height="150" alt="SilentDAO Logo">
+                </div>
+                <div class="icon-info">
+                    <strong>Format:</strong> SVG<br>
+                    <strong>Use:</strong> Website header, branding<br>
+                    <strong>Style:</strong> Animated shield
+                </div>
+                <a href="/logo.svg" download="silentdao-logo.svg" class="download-btn">Download SVG</a>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h2>📥 How to Convert SVG to PNG</h2>
+
+            <h3>Option 1: Online Converter (Recommended)</h3>
+            <ol>
+                <li>Visit <a href="https://cloudconvert.com/svg-to-png" target="_blank" style="color: #00ff9d;">cloudconvert.com/svg-to-png</a></li>
+                <li>Upload the SVG file</li>
+                <li>Select size: 512x512 or 192x192</li>
+                <li>Download PNG</li>
+            </ol>
+
+            <h3>Option 2: Using Command Line</h3>
+            <pre style="background: #000; padding: 15px; margin: 15px 0; overflow-x: auto;">
+# Install ImageMagick first, then:
+convert icon-512.svg -background transparent icon-512.png
+convert icon-192.svg -background transparent icon-192.png
+            </pre>
+
+            <h3>Option 3: Screenshot (Quick)</h3>
+            <ol>
+                <li>Open this page in browser</li>
+                <li>Right-click on icon above</li>
+                <li>Select "Open image in new tab"</li>
+                <li>Take screenshot or use browser "Save image as"</li>
+            </ol>
+        </div>
+
+        <div class="instructions">
+            <h2>📋 Submission Checklist</h2>
+            <ul>
+                <li>✅ <strong>Primary Icon:</strong> <code>icon-512.svg</code> (or convert to PNG)</li>
+                <li>✅ <strong>Favicon:</strong> <code>favicon.svg</code></li>
+                <li>✅ <strong>Logo:</strong> <code>logo.svg</code></li>
+                <li>✅ <strong>Colors:</strong> Green (#00ff9d), Black (#0a0a0a)</li>
+                <li>✅ <strong>Design:</strong> Shield + Eye + Checkmark</li>
+            </ul>
+        </div>
+
+        <div class="instructions">
+            <h2>🎨 Icon Specifications</h2>
+            <ul>
+                <li><strong>Primary Color:</strong> #00ff9d (Mantle Green)</li>
+                <li><strong>Secondary Color:</strong> #0a0a0a (Dark Background)</li>
+                <li><strong>Design Elements:</strong>
+                    <ul>
+                        <li>🛡️ Shield = Security and protection</li>
+                        <li>👁️ Eye = Transparency and verifiability</li>
+                        <li>✓ Checkmark = Voting and governance</li>
+                    </ul>
+                </li>
+                <li><strong>Style:</strong> Modern, minimalist, brutalist</li>
+                <li><strong>Animation:</strong> Subtle eye movement (for web)</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        console.log('SilentDAO Icon Download Page');
+        console.log('Icons ready for submission');
+    </script>
+</body>
+</html>

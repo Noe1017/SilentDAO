@@ -1,0 +1,55 @@
+{
+  "merkleRoot": "0x8cf1e5e05a49486e6554d6d1ee9235790ced55db7ecb8de5573d8849574c429e",
+  "totalVoters": 5,
+  "voters": [
+    {
+      "index": 0,
+      "address": "0x5aAeb6053F3E94C9b9A09f33669435E7Ef1BeAed",
+      "leaf": "0x793f88740e3ced5d3b007ab91feb3feb22d76afe4b9e849aa48d4d35f740fb4e",
+      "proof": [
+        "0x913c99ea930c78868f1535d34cd705ab85929b2eaaf70fcd09677ecd6e5d75e9",
+        "0x87c4c94a840ac8b185db4944cd78c8cb6b38db870a9c2d4b2a5d04d25d62f115",
+        "0x5a3e11a5800cee66eeefeeb47bd49aab5cc7b1f6d29abea069fbc34d1e6616d7"
+      ]
+    },
+    {
+      "index": 1,
+      "address": "0xfB6916095ca1df60bB79Ce92cE3Ea74c37c5d359",
+      "leaf": "0x913c99ea930c78868f1535d34cd705ab85929b2eaaf70fcd09677ecd6e5d75e9",
+      "proof": [
+        "0x793f88740e3ced5d3b007ab91feb3feb22d76afe4b9e849aa48d4d35f740fb4e",
+        "0x87c4c94a840ac8b185db4944cd78c8cb6b38db870a9c2d4b2a5d04d25d62f115",
+        "0x5a3e11a5800cee66eeefeeb47bd49aab5cc7b1f6d29abea069fbc34d1e6616d7"
+      ]
+    },
+    {
+      "index": 2,
+      "address": "0x71C7656EC7ab88b098defB751B7401B5f6d8976F",
+      "leaf": "0xce77f282bbdd21a2eb0cf9cd8f0717b39f0a483fdadd3cd41ea9de39ff71f68a",
+      "proof": [
+        "0x422a3fb4b7f4c2bd7d16f443b979f3105a470ce759d881925a2b8f09b22572f6",
+        "0xc28556462c3c3f80e401dc00768c21afed89e873283ae69bea90d5ff1d81448b",
+        "0x5a3e11a5800cee66eeefeeb47bd49aab5cc7b1f6d29abea069fbc34d1e6616d7"
+      ]
+    },
+    {
+      "index": 3,
+      "address": "0x3C5E2C64B9A61BC8e81E3Dbab9Fd8c0339C2015B",
+      "leaf": "0x422a3fb4b7f4c2bd7d16f443b979f3105a470ce759d881925a2b8f09b22572f6",
+      "proof": [
+        "0xce77f282bbdd21a2eb0cf9cd8f0717b39f0a483fdadd3cd41ea9de39ff71f68a",
+        "0xc28556462c3c3f80e401dc00768c21afed89e873283ae69bea90d5ff1d81448b",
+        "0x5a3e11a5800cee66eeefeeb47bd49aab5cc7b1f6d29abea069fbc34d1e6616d7"
+      ]
+    },
+    {
+      "index": 4,
+      "address": "0xeD786bdB87E31da7C8470B83251F8913b1cB3A87",
+      "leaf": "0x5a3e11a5800cee66eeefeeb47bd49aab5cc7b1f6d29abea069fbc34d1e6616d7",
+      "proof": [
+        "0x44749b6933bf6cfb0c86474e538eb36afc4a7b42421a73334f0e472d3990b35b"
+      ]
+    }
+  ],
+  "generatedAt": "2026-01-10T14:34:09.933Z"
+}
