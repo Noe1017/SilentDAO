@@ -1,10 +1,3 @@
-当然可以，我帮你写一个 **Hackathon 级别的 SilentDAO README 模板**，结构完整、面向评委和开发者，方便你直接提交或者在 PPT/演示页引用。
-
----
-
-# **SilentDAO — Privacy-Preserving Governance on Mantle**
-
-```markdown
 # SilentDAO
 **Privacy-Preserving Governance Voting on Mantle L2**
 
@@ -88,7 +81,7 @@ Vote Verification & Storage
 ↓
 Final Tally (Verifiable & Anonymous)
 
-````
+```
 
 ---
 
@@ -120,8 +113,8 @@ Final Tally (Verifiable & Anonymous)
 ## Getting Started
 1. Clone the repo
 ```bash
-git clone https://github.com/yourrepo/SilentDAO.git
-````
+git clone https://github.com/Noe1017/SilentDAO.git
+```
 
 2. Install dependencies
 
@@ -146,25 +139,7 @@ npm run dev
 
 ## Contact
 
-Project Lead: **Your Name**
-Email: [your.email@example.com](mailto:your.email@example.com)
-Discord / Twitter: @YourHandle
+Project Lead: **Noe1017**
+GitHub: [Noe1017/SilentDAO](https://github.com/Noe1017/SilentDAO)
 
 ---
-
-```
-
----
-
-✅ **特点**：
-- 面向评委：清楚讲明问题、解决方案和 Demo 流程  
-- 面向 Hackathon：技术可落地，展示 Mantle 的优势  
-- 简单明了：3–5 分钟演示完全足够  
-
----
-
-我可以帮你下一步做一个**“评委一眼懂的 SilentDAO Demo 流程图 + 前端 Mockup”**，直接贴进 README 或 PPT，让你的 Demo 看起来更直观冲击力。  
-
-你希望我现在帮你画吗？
-```
-
